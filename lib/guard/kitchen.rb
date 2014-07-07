@@ -55,7 +55,6 @@ module Guard
     end
 
     def reload
-      stop
       start
     end
 

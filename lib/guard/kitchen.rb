@@ -33,6 +33,7 @@ module Guard
         ::Guard::UI.info("Kitchen failed with #{e.to_s}")
         throw :task_has_failed
       end
+      run_all if options[:all_on_start]
     end
 
     def stop

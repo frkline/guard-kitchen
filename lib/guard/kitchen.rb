@@ -37,21 +37,21 @@ module Guard
     end
 
     def stop
-      ::Guard::UI.warning("Guard::Kitchen cannot stop for you, due to strange bug.")
-      ::Guard::UI.warning("You likely want to run 'kitchen destroy'")
-      #::Guard::UI.info("Guard::Kitchen is stopping")
-      #cmd = Mixlib::ShellOut.new("kitchen destroy")
-      #cmd.live_stream = STDOUT
-      #cmd.run_command
-      #begin
-      #  cmd.error!
-      #rescue Mixlib::ShellOut::ShellCommandFailed => e
-      #  ::Guard::UI.info("Kitchen failed with #{e.to_s}")
-      #  throw :task_has_failed
-      #ensure
-      #  # Sometimes, we leave the occasional shell process unreaped!
-      #  Process.waitall
-      #end
+      #::Guard::UI.warning("Guard::Kitchen cannot stop for you, due to strange bug.")
+      #::Guard::UI.warning("You likely want to run 'kitchen destroy'")
+      ::Guard::UI.info("Guard::Kitchen is stopping")
+      cmd = Mixlib::ShellOut.new("kitchen destroy")
+      cmd.live_stream = STDOUT
+      cmd.run_command
+      begin
+        cmd.error!
+      rescue Mixlib::ShellOut::ShellCommandFailed => e
+        ::Guard::UI.info("Kitchen failed with #{e.to_s}")
+        throw :task_has_failed
+      ensure
+        # Sometimes, we leave the occasional shell process unreaped!
+        Process.waitall
+      end
     end
 
     def reload

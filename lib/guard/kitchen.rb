@@ -50,7 +50,7 @@ module Guard
         throw :task_has_failed
       ensure
         # Sometimes, we leave the occasional shell process unreaped!
-        Process.waitall
+        #Process.waitall
       end
     end
 

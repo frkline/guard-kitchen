@@ -55,6 +55,7 @@ module Guard
     end
 
     def reload
+      ::Guard::UI.info("Guard::Kitchen reload")
       start
     end
 

@@ -1,7 +1,7 @@
 # -*- encoding: utf-8 -*-
 Gem::Specification.new do |spec|
   spec.name          = "guard-kitchen"
-  spec.version       = 0.0.2
+  spec.version       = "0.0.2"
   spec.authors       = ["Adam Jacob"]
   spec.email         = ["adam@opscode.com"]
   spec.description   = %q{Guard plugin for test kitchen}

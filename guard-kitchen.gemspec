@@ -1,6 +1,4 @@
 # -*- encoding: utf-8 -*-
-require File.expand_path('../lib/guard/kitchen/version', __FILE__)
-
 Gem::Specification.new do |spec|
   spec.name          = "guard-kitchen"
   spec.version       = Guard::Kitchen::VERSION
